@@ -20,43 +20,43 @@
             <tr>
                 <td><p><b>NAMA</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="text"></td>
+                <td><input id="nama" type="text"></td>
             </tr>
             <tr>
                 <td><p><b>KELAS</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="text"></td>
+                <td><input id="kelas" type="text"></td>
             </tr>
             <tr>
                 <td><p><b>JURUSAN</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="text"></td>
+                <td><input id="jurusan" type="text"></td>
             </tr>
             <tr>
                 <td><p><b>PRODI</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="text"></td>
+                <td><input id="prodi" type="text"></td>
             </tr>
                 <tr>
                 <td><p><b>KAMPUS</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="text"></td>
+                <td><input id="kampus" type="text"></td>
             </tr>
             <tr>
                 <td><p><b>TANGGAL LAHIR</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="date"></td>
+                <td><input id="tanggal_lahir" type="date"></td>
             </tr>
             <tr>
                 <td><p><b>TEMPAT LAHIR</b></p></td>
                 <td><p><b>:</b></p></td>
-                <td><input type="text"></td>
+                <td><input id="tempat_lahir" type="text"></td>
             </tr>
             <tr>
                 <td><p><b>JENIS KELAMIN</b></p></td>
                 <td><p><b>:</b></p></td>
                 <td>
-                    <input type="radio" name="jenis_kelamin" id="laki-laki">
+                    <input id="laki-laki" type="radio" name="jenis_kelamin">
                     <label for="laki-laki">Laki-Laki</label>
                     <input type="radio" name="jenis_kelamin" id="perempuan">
                     <label for="perempuan">Perempuan</label>
@@ -139,6 +139,52 @@
         </table>
     </form>
 
-    
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nama = this.querySelector('input[type="text"]').value;
+        const kelas = this.querySelectorAll('input[type="text"]')[1].value;
+        const jurusan = this.querySelectorAll('input[type="text"]')[2].value;
+        const prodi = this.querySelectorAll('input[type="text"]')[3].value;
+        const kampus = this.querySelectorAll('input[type="text"]')[4].value;
+        const tanggalLahir = this.querySelector('input[type="date"]').value;
+        const tempatLahir = this.querySelectorAll('input[type="text"]')[5].value;
+        const jenisKelamin = this.querySelector('input[name="jenis_kelamin"]:checked') ? this.querySelector('input[name="jenis_kelamin"]:checked').nextElementSibling.textContent : '';
+        const agama = this.querySelector('select[name="agama"]').value;
+        const golonganDarah = this.querySelector('input[name="golongan_darah"]:checked') ? this.querySelector('input[name="golongan_darah"]:checked').nextElementSibling.textContent : '';
+
+        const hobiElements = this.querySelectorAll('input[name="hobi"]:checked');
+        let hobi = [];
+        hobiElements.forEach(hobiElement => {
+            hobi.push(hobiElement.nextElementSibling.textContent);
+        });
+        
+        const alamat = this.querySelector('textarea').value;
+        const kota = this.querySelectorAll('input[type="text"]')[6].value;
+        const provinsi = this.querySelectorAll('input[type="text"]')[7].value;
+        const kewarganegaraan = this.querySelectorAll('input[type="text"]')[8].value;
+        const noTelepon = this.querySelector('input[type="number"]').value;
+
+        alert(
+            `NAMA: ${nama}\n` +
+            `KELAS: ${kelas}\n` +
+            `JURUSAN: ${jurusan}\n` +
+            `PRODI: ${prodi}\n` +
+            `KAMPUS: ${kampus}\n` +
+            `TANGGAL LAHIR: ${tanggalLahir}\n` +
+            `TEMPAT LAHIR: ${tempatLahir}\n` +
+            `JENIS KELAMIN: ${jenisKelamin}\n` +
+            `AGAMA: ${agama}\n` +
+            `GOLONGAN DARAH: ${golonganDarah}\n` +
+            `HOBI: ${hobi.join(', ')}\n` +
+            `ALAMAT: ${alamat}\n` +
+            `KOTA: ${kota}\n` +
+            `PROVINSI: ${provinsi}\n` +
+            `KEWARGANEGARAAN: ${kewarganegaraan}\n` +
+            `NO. TELEPON: ${noTelepon}\n`
+        );
+    });
+</script>
 </body>
 </html>
