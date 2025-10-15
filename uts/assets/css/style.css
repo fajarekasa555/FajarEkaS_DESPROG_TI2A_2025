@@ -1,0 +1,346 @@
+:root {
+    --bg: #f5f6f8;
+    --panel: #ffffff;
+    --muted: #6b7280;
+    --accent: #4b6ef6;
+    --danger: #e02424;
+    --warning: #ca8a04;
+    --card-shadow: 0 6px 18px rgba(47, 49, 66, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: #111827;
+    height: 100vh;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--panel);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.brand i {
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+}
+
+.btn.danger {
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid rgba(224, 36, 36, 0.12);
+}
+
+.sidebar-section.small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.schedules {
+    padding-top: 8px;
+    border-top: 1px solid rgba(15, 23, 36, 0.04);
+}
+
+.sched-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.sched-item .sched-title {
+    flex: 1;
+    font-size: 14px;
+    /* color: #0f1724; */
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sched-item .small-btn.red {
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.sched-item .small-btn.yellow {
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.sched-item.active {
+    background: linear-gradient(90deg, rgba(75,110,246,0.08), rgba(75,110,246,0.03));
+    border: 1px solid rgba(75,110,246,0.12);
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background: transparent;
+}
+
+.topbar h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.total-card {
+    background: var(--panel);
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.total-card div:first-child {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.total-card div:last-child {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    padding: 14px 24px;
+}
+
+.controls input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e7eb;
+}
+
+.list-wrap {
+    padding: 18px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+}
+
+.item-card {
+    background: var(--panel);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    min-height: 90px;
+}
+
+.item-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.item-left h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.item-left p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.item-meta {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.small-btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: transparent;
+    cursor: pointer;
+}
+
+.small-btn.green {
+    background: #e6f4ea;
+    color: #0b7040;
+    border: none;
+}
+
+.small-btn.red {
+    background: #fff5f5;
+    color: var(--danger);
+    border: 1px solid rgba(224, 36, 36, 0.08);
+}
+
+.small-btn.yellow {
+    background: #fffef5;
+    color: var(--warning);
+    border: 1px solid rgba(170, 166, 37, 0.08);
+}
+
+.item-card.done {
+    opacity: 0.85;
+    border-left: 4px solid #10b981;
+    text-decoration: line-through;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--panel);
+    padding: 20px;
+    border-radius: 12px;
+    width: 360px;
+    box-shadow: 0 12px 40px rgba(17, 24, 39, 0.08);
+}
+
+.modal-close {
+    position: absolute;
+    right: 26px;
+    top: 18px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-icon i {
+    color: var(--muted);
+    padding: 8px;
+    background: transparent;
+}
+
+.input-with-icon input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e7eb;
+}
+
+.input-textarea {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-textarea textarea {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e7eb;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    background: var(--panel);
+    color: inherit;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+    .list-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+body.dark {
+    --bg: #0b1020;
+    --panel: #0f1724;
+    --muted: #9aa4b2;
+    --accent: #7aa2ff;
+    color: #e6eef8;
+}
+
+body.dark .btn {
+    border-color: rgba(255, 255, 255, 0.06);
+}
