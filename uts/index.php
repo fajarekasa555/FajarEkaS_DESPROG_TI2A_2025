@@ -24,7 +24,7 @@
             </label>
         </div>
         <button id="openFormSchedule" class="btn primary">
-            <i class="fa-solid fa-plus"></i> Tambah Scedule
+            <i class="fa-solid fa-calendar-plus"></i> Tambah Scedule
         </button>
 
         <div class="sidebar-section">
@@ -68,21 +68,21 @@
                 <label>Nama Barang <span class="req">*</span></label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-tag"></i>
-                    <input type="text" id="itemName" required />
+                    <input type="text" id="itemName" />
                 </div>
             </div>
             <div class="form-row">
                 <label>Jumlah <span class="req">*</span></label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-hashtag"></i>
-                    <input type="number" id="itemQty" min="1" value="1" required />
+                    <input type="number" id="itemQty" min="1" value="1" />
                 </div>
             </div>
             <div class="form-row">
                 <label>Harga per Barang (Rp) <span class="req">*</span></label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-money-bill"></i>
-                    <input type="number" id="itemPrice" min="0" step="100" value="0" required />
+                    <input type="number" id="itemPrice" min="0" step="100" value="0" />
                 </div>
             </div>
             <div class="form-row">
@@ -108,21 +108,21 @@
                 <label>Nama Barang <span class="req">*</span></label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-tag"></i>
-                    <input type="text" id="editItemName" required />
+                    <input type="text" id="editItemName" />
                 </div>
             </div>
             <div class="form-row">
                 <label>Jumlah <span class="req">*</span></label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-hashtag"></i>
-                    <input type="number" id="editItemQty" min="1" required />
+                    <input type="number" id="editItemQty" min="1" />
                 </div>
             </div>
             <div class="form-row">
                 <label>Harga per Barang (Rp) <span class="req">*</span></label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-money-bill"></i>
-                    <input type="number" id="editItemPrice" min="0" step="100" required />
+                    <input type="number" id="editItemPrice" min="0" step="100" />
                 </div>
             </div>
             <div class="form-row">
@@ -148,7 +148,7 @@
             <div class="form-row">
                 <label>Nama Schedule <span class="req">*</span></label>
                 <div class="input-with-icon">
-                    <input type="text" id="scheduleName" required />
+                    <input type="text" id="scheduleName" />
                 </div>
             </div>
             <div class="form-actions">
