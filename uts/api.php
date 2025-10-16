@@ -1,5 +1,6 @@
 <?php
 session_start();
+// print_r($_SESSION);exit;
 header('Content-Type: application/json');
 
 if (!isset($_SESSION['schedules'])) {
@@ -21,6 +22,7 @@ switch ($action) {
             break;
         }
         $id = time();
+        // 1 Januari 1970
         $_SESSION['schedules'][] = [
             'id' => $id,
             'title' => $title,
@@ -107,7 +109,7 @@ switch ($action) {
                 foreach ($s['items'] as &$it) {
                     if ($it['id'] == $itemId) {
                         $it['done'] = !$it['done'];
-                        $response = ['status' => 'success', 'message' => 'Status item diperbarui.', 'done' => $it['done']];
+                        $response = ['status' => 'success', 'message' => 'Status item diperbarui menjadi ' . ($it['done'] ? 'selesai' : 'belum'), 'done' => $it['done']];
                         break 3;
                     }
                 }

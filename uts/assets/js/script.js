@@ -165,7 +165,7 @@ $(function () {
             const card = $(`<div class="item-card ${it.done ? 'done' : ''}" data-id="${it.id}">
                 <div class="item-left">
                     <h3>${escapeHtml(it.name)}</h3>
-                    <p>${it.qty} × Rp${formatNumber(it.price)} = Rp${formatNumber(it.qty * it.price)}</p>
+                    <p>${it.qty} x Rp${formatNumber(it.price)} = Rp${formatNumber(it.qty * it.price)}</p>
                     <p>${escapeHtml(it.description)}</p>
                     <div class="item-meta">ID: ${it.id}</div>
                 </div>
@@ -254,7 +254,13 @@ $(function () {
             return showModalAlert('failed', 'Gagal', 'Harga tidak boleh negatif!');
         }
 
-        $.post(API_URL, { action: 'update_item', schedule_id: currentScheduleId, item_id: editingItemId, name, qty, price, description }, res => {
+        $.post(
+            API_URL, 
+        { 
+            action: 'update_item', 
+            schedule_id: currentScheduleId, 
+            item_id: editingItemId, name, qty, price, description 
+        }, res => {
             showModalAlert(res.status, res.status === 'success' ? 'Berhasil' : 'Gagal', res.message);
             hideModalEdit();
             fetchSchedules();
@@ -262,7 +268,13 @@ $(function () {
     });
 
     function toggleItemDone(id) {
-        $.post(API_URL, { action: 'toggle_item', schedule_id: currentScheduleId, item_id: id }, res => {
+        $.post(
+            API_URL, 
+        { 
+            action: 'toggle_item', 
+            schedule_id: currentScheduleId, 
+            item_id: id 
+        }, res => {
             showModalAlert(res.status, res.status === 'success' ? 'Berhasil' : 'Gagal', res.message);
             fetchSchedules();
         }, 'json');
