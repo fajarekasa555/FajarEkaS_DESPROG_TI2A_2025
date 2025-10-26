@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Manipulation</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>CSS Manipulation</h2>
+<p id="sty">Contoh paragraf</p>
+<button id="addc">Add Class</button>
+<button id="remc">Remove Class</button>
+<button id="cssprop">Set CSS</button>
+
+<script>
+
+$(function(){
+  $("#addc").click(function(){ $("#sty").addClass("highlight"); });
+  $("#remc").click(function(){ $("#sty").removeClass("highlight"); });
+  $("#cssprop").click(function(){ $("#sty").css("font-weight","bold"); });
+});
+
+</script>
+</body>
+</html>

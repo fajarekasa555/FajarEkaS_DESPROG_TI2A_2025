@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Append Remove</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Append / Remove Demo</h2>
+<input id="name" placeholder="Nama">
+<button id="add">Add Row</button>
+<table id="tbl" border="1" style="width:100%;margin-top:10px"><thead><tr><th>Nama</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+
+<script>
+
+$(function(){
+  $("#add").click(function(){
+    var name = $("#name").val() || "Anon";
+    var row = $("<tr><td>"+name+"</td><td><button class='del'>Delete</button></td></tr>");
+    $("#tbl tbody").append(row);
+  });
+  $("#tbl").on("click",".del", function(){ $(this).closest("tr").remove(); });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Document Ready</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Document Ready Demo</h1>
+<button id="btn">Klik Saya!</button>
+<p id="output"></p>
+
+<script>
+
+$(document).ready(function(){
+  $("#btn").click(function(){
+    $("#output").text("Tombol diklik — DOM sudah siap!");
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AJAX Load</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>AJAX Load</h2>
+<button id="load">Load Content</button>
+<div id="contentArea" style="margin-top:10px;border:1px solid #ddd;padding:8px">Belum ada konten</div>
+
+<script>
+
+$(function(){
+  $("#load").click(function(){
+    // Menggunakan HTML dummy dari githubusercontent atau local file
+    $("#contentArea").load("test-content.html");
+  });
+});
+
+</script>
+</body>
+</html>

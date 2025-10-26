@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Events</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Events Demo</h2>
+<div id="box" style="width:200px;height:100px;border:1px solid #333;padding:10px">
+Letakkan kursor atau klik saya
+</div>
+
+<script>
+
+$(function(){
+  $("#box").hover(function(){
+    $(this).text("Mouseover!");
+  }, function(){
+    $(this).text("Mouse keluar");
+  });
+  $("#box").click(function(){
+    $(this).append("<p>Anda mengklik box.</p>");
+  });
+});
+
+</script>
+</body>
+</html>

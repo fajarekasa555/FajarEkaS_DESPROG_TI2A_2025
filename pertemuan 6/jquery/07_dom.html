@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DOM Manipulation</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>DOM Manipulation</h2>
+<p id="p1">Teks awal</p>
+<button id="getText">Get Text</button>
+<button id="setText">Set Text</button>
+
+<script>
+
+$(function(){
+  $("#getText").click(function(){ alert($("#p1").text()); });
+  $("#setText").click(function(){ $("#p1").text("Teks diubah oleh jQuery"); });
+});
+
+</script>
+</body>
+</html>

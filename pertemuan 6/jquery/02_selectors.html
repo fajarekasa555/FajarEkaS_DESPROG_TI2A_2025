@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selectors</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Selector Demo</h2>
+<p class="txt">Paragraf 1</p>
+<p class="txt">Paragraf 2</p>
+<button id="showClass">Tandai Class</button>
+
+<script>
+
+$(function(){
+  $("#showClass").click(function(){
+    $(".txt").css("border","1px dashed #333");
+    alert("Selector .txt dipilih: "+$(".txt").length+" elemen");
+  });
+});
+
+</script>
+</body>
+</html>

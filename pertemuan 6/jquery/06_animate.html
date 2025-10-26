@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Animate</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Animate & Chaining</h2>
+<button id="start">Start Animation</button>
+<div id="boxAnim" style="width:50px;height:50px;background:#666;position:relative"></div>
+
+<script>
+
+$(function(){
+  $("#start").click(function(){
+    $("#boxAnim").fadeIn(200).animate({left:'200px',top:'20px',opacity:0.5},1000).slideUp(600);
+  });
+});
+
+</script>
+</body>
+</html>

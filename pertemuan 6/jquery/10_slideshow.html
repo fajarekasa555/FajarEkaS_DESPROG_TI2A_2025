@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slideshow</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Simple Slideshow</h2>
+<div id="slideshow" style="width:400px;height:250px;overflow:hidden;position:relative">
+  <img src="https://via.placeholder.com/400x250?text=Gambar+1" class="slide" style="position:absolute;left:0;top:0;display:none">
+  <img src="https://via.placeholder.com/400x250?text=Gambar+2" class="slide" style="position:absolute;left:0;top:0;display:none">
+  <img src="https://via.placeholder.com/400x250?text=Gambar+3" class="slide" style="position:absolute;left:0;top:0;display:none">
+</div>
+<button id="startSS">Start</button>
+
+<script>
+
+$(function(){
+  var i=0, slides = $("#slideshow .slide");
+  function showNext(){ slides.eq(i).fadeOut(600); i=(i+1)%slides.length; slides.eq(i).fadeIn(600); }
+  slides.hide(); slides.eq(0).show();
+  var t;
+  $("#startSS").click(function(){
+    if(t){ clearInterval(t); t=null; $(this).text("Start"); }
+    else{ t = setInterval(showNext,2000); $(this).text("Stop"); }
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hide Show</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Effect Hide / Show</h2>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<div id="demo">Konten akan disembunyikan/ditampilkan</div>
+
+<script>
+
+$(function(){
+  $("#hide").click(function(){ $("#demo").hide("slow"); });
+  $("#show").click(function(){ $("#demo").show("slow"); });
+});
+
+</script>
+</body>
+</html>
